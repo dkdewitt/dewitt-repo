@@ -1,0 +1,13 @@
+Testing links for REST:
+
+# get member at id
+http://localhost:8080/stuffsystem-web/rest/members/{id}   # 0 should work
+
+# echo back some text
+http://localhost:8080/stuffsystem-web/rest/inventory/echo/{someText}
+
+# reply back with the http request:
+http://localhost:8080/stuffsystem-web/rest/inventory/get-request
+
+
+

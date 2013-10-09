@@ -1,0 +1,13 @@
+----------------------------
+H2
+----------------------------
+h2 database jar should already exist under the jboss dir:
+/opt/jboss/modules/com/h2database/h2/main/h2-1.3.161.jar
+
+h2console.war - needs to be deployed?
+Access the console via this link:  http://localhost:8080/h2console
+
+Starting the server from cmdline:
+java -cp h2*.jar org.h2.tools.Server
+(use -? for help - can use different ports & such)
+

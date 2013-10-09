@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -x
+#$JBOSS_HOME/bin/standalone.sh -c standalone-full.xml
+$JBOSS_HOME/bin/standalone.sh 
+

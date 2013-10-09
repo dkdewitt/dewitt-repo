@@ -1,0 +1,5 @@
+#!/bin/bash
+set -x
+# TODO For some reason the EAR needs 'package' as well (WAR does not).
+mvn package jboss-as:deploy
+
