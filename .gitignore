@@ -1,0 +1,19 @@
+# Standard java stuff:
+*.class
+*.jar
+*.war
+*.ear
+
+# Eclipse dirs:
+target/
+.settings
+.metadata
+RemoteSystemsTempFiles
+# TODO - should these be ignored too?
+#.project
+#.classpath
+
+# (Mike's slickedit project files):
+*.vpwhistu
+*.vtg
+
