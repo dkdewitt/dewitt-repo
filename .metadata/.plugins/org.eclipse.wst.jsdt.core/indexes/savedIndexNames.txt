@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/home/vickievick/stuffws/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1441714571.index
+3836918418.index
+2690248850.index
+833295634.index
+3414093657.index
+3012825974.index

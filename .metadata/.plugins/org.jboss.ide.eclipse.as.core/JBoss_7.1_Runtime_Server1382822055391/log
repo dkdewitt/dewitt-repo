@@ -1,0 +1,450 @@
+!SESSION 2013-10-26 16:08:22.783 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:14:40.029
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:14:40.043
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:14:40.051
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 16:14:42.477
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 16:15:00.607
+!MESSAGE Server Startup Succeeded
+!SESSION 2013-10-26 16:25:01.287 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:26:44.817
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:26:44.826
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:26:44.835
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 16:26:47.142
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 16:26:54.557
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 16:27:28.575
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 16:27:40.184
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 16:27:48.345
+!MESSAGE Server Startup Succeeded
+!SESSION 2013-10-26 16:43:25.232 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:45:17.588
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:45:17.596
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:45:17.605
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 16:45:19.123
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 16:45:26.091
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:45:44.003
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:45:44.009
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 16:45:44.017
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 16:45:45.325
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 16:46:18.030
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 16:46:25.166
+!MESSAGE Server Startup Succeeded
+!SESSION 2013-10-26 17:06:39.133 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:08:45.908
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:08:45.918
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:08:45.926
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 17:08:48.625
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 17:08:54.500
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:08:54.640
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2013-10-26 17:09:15.886
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 17:09:23.649
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:10:50.618
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:10:50.624
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:10:50.632
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 17:10:51.501
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 17:10:57.138
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:10:57.308
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2013-10-26 17:11:18.426
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 17:11:43.544
+!MESSAGE Server processes have been terminated.
+!SESSION 2013-10-26 17:11:54.094 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:21:39.019
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:21:39.035
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:21:39.046
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 17:21:41.099
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 17:21:46.975
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:21:47.092
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 17:22:37.841
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:23:19.375
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:23:19.381
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:23:19.392
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 17:23:20.312
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 17:23:25.938
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:23:26.143
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 17:23:45.217
+!MESSAGE Server processes have been terminated.
+!SESSION 2013-10-26 17:42:21.773 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:45:27.032
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:45:27.043
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:45:27.052
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 17:45:28.770
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 17:45:34.752
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:45:54.723
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2013-10-26 17:46:15.868
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server still not ready to be shown in browser. Aborting delay.
+
+!ENTRY unknown 0 0 2013-10-26 17:46:29.832
+!MESSAGE OK
+
+!ENTRY unknown 0 0 2013-10-26 17:46:29.837
+!MESSAGE OK
+
+!ENTRY unknown 0 0 2013-10-26 17:46:29.841
+!MESSAGE OK
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:46:36.610
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:46:36.621
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:46:36.630
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:46:37.495
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 17:47:08.532
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 17:47:33.585
+!MESSAGE 3 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 17:47:34.478
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 17:47:40.108
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 17:47:40.247
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 17:47:57.564
+!MESSAGE Server processes have been terminated.
+!SESSION 2013-10-26 19:43:04.350 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:45:34.689
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:45:34.703
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:45:34.714
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 19:45:37.108
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 19:45:42.969
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 19:45:43.139
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:46:20.252
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:46:20.258
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:46:20.266
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:46:38.465
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:46:38.471
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:46:38.529
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 19:46:43.321
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:47:08.856
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:47:08.862
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:47:08.871
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 19:47:09.732
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 19:47:15.465
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 19:47:15.717
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:49:30.953
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:49:30.959
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:49:30.967
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 19:49:32.821
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 19:49:38.029
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 19:49:43.662
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 19:49:43.823
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 19:50:28.607
+!MESSAGE Server processes have been terminated.
+!SESSION 2013-10-26 19:50:37.513 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:54:04.403
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:54:04.424
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:54:04.439
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 19:54:24.957
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 19:54:30.631
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 19:54:30.827
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:54:58.038
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:54:58.045
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:54:58.054
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:55:30.817
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:55:30.835
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:55:30.851
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:56:25.303
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:56:25.314
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:56:25.324
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:56:50.529
+!MESSAGE 4 files modified in module stuffsystem-ear
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:56:50.583
+!MESSAGE 8 files modified in module stuffsystem-web
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:56:50.593
+!MESSAGE 16 files modified in module stuffsystem-ejb
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:57:13.015
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:57:13.027
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 19:57:13.035
+!MESSAGE Module stuffsystem-ejb published without error.
+!SESSION 2013-10-26 19:59:41.721 -----------------------------------------------
+eclipse.buildId=4.3.0.M20130911-1000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 20:06:20.382
+!MESSAGE Module stuffsystem-ear published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 20:06:20.403
+!MESSAGE Module stuffsystem-web published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2013-10-26 20:06:20.415
+!MESSAGE Module stuffsystem-ejb published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2013-10-26 20:06:21.914
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2013-10-26 20:06:27.805
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2013-10-26 20:06:27.954
+!MESSAGE Module stuffsystem-ear on JBoss 7.1 Runtime Server not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2013-10-26 20:06:47.143
+!MESSAGE Server processes have been terminated.

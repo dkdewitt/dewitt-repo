@@ -5,10 +5,10 @@
 *.ear
 
 # Eclipse dirs:
-target/
-.settings
-.metadata
 RemoteSystemsTempFiles
+target/
+#.settings
+#.metadata
 # TODO - should these be ignored too?
 #.project
 #.classpath
