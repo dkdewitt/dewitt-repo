@@ -1,19 +1,22 @@
 # Standard java stuff:
 *.class
-*.jar
-*.war
-*.ear
+
+# (As long as the 'target' dir is ignored, these should be ignored too, except for the 3rd party ones we want.)
+#*.jar
+#*.war
+#*.ear
 
 # Eclipse dirs:
 RemoteSystemsTempFiles
 target/
 .metadata
 # TODO - should these be ignored too?  (answer:  probably not, unless they cause problems)
+# (this one could probably be ignored safely:)
 #.settings
 #.project
 #.classpath
 
-# (Mike's slickedit project files):
+# (Mike's generated slickedit files):
 *.vpwhistu
 *.vtg
 

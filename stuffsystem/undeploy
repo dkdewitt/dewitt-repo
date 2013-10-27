@@ -2,5 +2,9 @@
 
 set -x
 # Again, this requires 'package' first, otherwise it won't undeploy... TODO figure out?
-mvn package jboss-as:undeploy
+mvn package jboss-as:undeploy && \
+rm $JBOSS_HOME/standalone/deployments/stuffsystem-ear.ear* -rf && \
+echo && \
+echo "Undeployed successfully." && \
+echo 
 
