@@ -1,5 +1,6 @@
 #!/bin/bash
 
 set -x
-mvn jboss-as:undeploy
+# Again, this requires 'package' first, otherwise it won't undeploy... TODO figure out?
+mvn package jboss-as:undeploy
 
