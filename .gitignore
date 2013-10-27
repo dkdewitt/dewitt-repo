@@ -10,9 +10,9 @@
 RemoteSystemsTempFiles
 target/
 .metadata
+# (this one could probably be ignored safely, it's mostly preferences:)
+.settings
 # TODO - should these be ignored too?  (answer:  probably not, unless they cause problems)
-# (this one could probably be ignored safely:)
-#.settings
 #.project
 #.classpath
 
