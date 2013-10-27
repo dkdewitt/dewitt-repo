@@ -7,9 +7,9 @@
 # Eclipse dirs:
 RemoteSystemsTempFiles
 target/
-#.settings
-#.metadata
+.metadata
 # TODO - should these be ignored too?
+#.settings
 #.project
 #.classpath
 
