@@ -28,348 +28,392 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
+import com.mongodb.WriteResult;
+import com.stuffsystem.util.MongoClientConnection;
 
 // path is:  http://localhost:8080/stuffsystem-web/inventory/
 @Path("inventory/")
 public class InventoryRESTService {
 
-   /**
+	MongoClient client = null;
+	DB db = null;
+	DBCollection items = null;
+
+	/**
     * 
     */
-   public InventoryRESTService() {
+	public InventoryRESTService() {
+		client = MongoClientConnection.getMongoConnection();
+		db = client.getDB("stuff");
+		items = db.getCollection("items");
+	}
 
-   }
+	/**
+	 * Get a listing of all inventory items.
+	 * 
+	 * @return
+	 */
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getAllItems() {
+		String result = null;
 
-   /**
-    * Get a listing of all inventory items.
-    * 
-    * @return
-    */
-   @GET
-   @Produces(MediaType.APPLICATION_JSON)
-   public String getAllItems() {
-           String result = null;
-           
-           // setup mongo connection
-           MongoClient client = null;
-           try {
-                   client = new MongoClient();
-           } catch (UnknownHostException e) {
-                   e.printStackTrace();
-           }
-           
-           DB db = client.getDB("stuff");
-           DBCollection items = db.getCollection("items");
-           // finish connection setup
-           
-           DBCursor cursor = items.find();
-           
-           StringBuilder sb = new StringBuilder();
-           sb.append("{\"items\":[");
-           
-           while (cursor.hasNext()) {
-                   DBObject item = cursor.next();
-                   sb.append(item.toString() + ",");
-           }
-           
-           sb.deleteCharAt(sb.length() - 1);
-           
-           sb.append("]}");
-           
-           result = sb.toString();
+		DBCursor cursor = items.find();
 
-           return result;
-   }
+		StringBuilder sb = new StringBuilder();
+		sb.append("{\"items\":[");
+		while (cursor.hasNext()) {
+			DBObject item = cursor.next();
+			sb.append(item.toString() + ",");
+		}
 
-   /**
-    * Get a listing of a single item.
-    * 
-    * @param itemId
-    * @return
-    */
-   @GET
-   @Path("{itemId}")
-   @Produces(MediaType.APPLICATION_JSON)
-   public String getItem(@PathParam("itemId") String itemId) {
-           String result = itemId;
+		sb.deleteCharAt(sb.length() - 1);
 
-           return result;
-   }
+		sb.append("]}");
 
-   /**
-    * Get a single item based on a query.
-    * 
-    * @param input
-    * @return
-    */
-   @GET
-   @Path("_search")
-   @Consumes(MediaType.APPLICATION_JSON)
-   @Produces(MediaType.APPLICATION_JSON)
-   public String getItemFromJson(String input) {
-           String result = input;
+		result = sb.toString();
 
-           return result;
-   }
+		MongoClientConnection.closeMongoConnection(client);
 
-   /**
-    * Create a new item.
-    * 
-    * @param input
-    * @return
-    */
-   @POST
-   @Consumes(MediaType.APPLICATION_JSON)
-   @Produces(MediaType.APPLICATION_JSON)
-   public String postItem(String input) {
-           
-       String result = null;
+		return result;
+	}
 
-       // setup mongo connection
-       MongoClient client = null;
-       try {
-               client = new MongoClient();
-       } catch (UnknownHostException e) {
-               e.printStackTrace();
-       }
+	/**
+	 * Get a listing of a single item.
+	 * 
+	 * @param itemId
+	 * @return
+	 */
+	@GET
+	@Path("{itemId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getItem(@PathParam("itemId") String itemId) {
+		BasicDBObject query = new BasicDBObject("_id", itemId);
 
-       DB db = client.getDB("stuff");
-       DBCollection items = db.getCollection("items");
-       // finish connection setup
+		DBCursor cursor = items.find(query);
 
-       // parse json and setup document
-       Gson gson = new Gson();
+		try {
+			while (cursor.hasNext()) {
+				return cursor.next().toString();
+			}
+		} finally {
+			cursor.close();
+		}
+		
+		MongoClientConnection.closeMongoConnection(client);
 
-       Type type = new TypeToken<Map<String, String>>(){}.getType();
-       Map<String, String> myMap = gson.fromJson(input, type);
+		return "error";
+	}
 
-       BasicDBObject document = new BasicDBObject(myMap);
-       // end parse
+	/**
+	 * Get a single item based on a query. Untested.
+	 * 
+	 * @param input
+	 * @return
+	 */
+	@GET
+	@Path("_search")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getItemFromJson(String input) {
+		
+		// parse json and setup document
+		Gson gson = new Gson();
 
-       items.insert(document);
+		Type type = new TypeToken<Map<String, String>>() {
+		}.getType();
+		Map<String, String> myMap = gson.fromJson(input, type);
 
-       client.close();
+		BasicDBObject document = new BasicDBObject(myMap);
+		// end parse
+		
+		DBCursor cursor = items.find(document);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("{\"items\":[");
+		
+		try {
+			while (cursor.hasNext()) {
+				sb.append(cursor.next().toString() + ",");
+			}
+		} finally {
+			cursor.close();
+		}
+		
+		sb.deleteCharAt(sb.length() - 1);
 
-       result = document.toString();
+		sb.append("]}");
+		
+		MongoClientConnection.closeMongoConnection(client);
 
-       return result;
-   }
+		return sb.toString();
+	}
 
+	/**
+	 * Create a new item.
+	 * 
+	 * @param input
+	 * @return
+	 */
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String postItem(String input) {
+		String result = null;
 
-   // test path - echoes back the text you enter
-   @GET
-   @Path("echo/{someText}")
-   @Produces(MediaType.APPLICATION_JSON)
-   public String echoTest(@PathParam("someText") String someText) {
-       String result = someText + " - NEWDEPLOY";
-       return result;
-   }
+		// parse json and setup document
+		Gson gson = new Gson();
 
-   /**
-    * Update an existing item.
-    * 
-    * @param input
-    * @return
-    */
-   @PUT
-   @Consumes(MediaType.APPLICATION_JSON)
-   @Produces(MediaType.APPLICATION_JSON)
-   public String putItem(String input) {
-           String result = input;
+		Type type = new TypeToken<Map<String, String>>() {
+		}.getType();
+		Map<String, String> myMap = gson.fromJson(input, type);
 
-           return result;
-   }
+		BasicDBObject document = new BasicDBObject(myMap);
+		// end parse
 
-   /**
-    * Delete the specified item.
-    * 
-    * @param itemId
-    * @return
-    */
-   @DELETE
-   @Path("{itemId}")
-   @Produces(MediaType.APPLICATION_JSON)
-   public String deleteItem(@PathParam("itemId") String itemId) {
-           String result = itemId;
+		items.insert(document);
 
-           return result;
-   }
+		result = document.toString();
 
-   /**
-    * Delete the item with id passed in as a json.
-    * 
-    * @param input
-    * @return
-    */
-   @DELETE
-   @Consumes(MediaType.APPLICATION_JSON)
-   @Produces(MediaType.APPLICATION_JSON)
-   public String deleteItemFromJson(String input) {
-           String result = input;
+		MongoClientConnection.closeMongoConnection(client);
 
-           return result;
-   }
-   
-   
-   /**
-    * Get a items based on a query.
-    * 
-    * @param input
-    * @return
-    */
-   @GET
-   @Path("search")
-   
-   @Produces(MediaType.APPLICATION_JSON)
-   public String getItemSearch(@Context UriInfo info){
-           MultivaluedMap<String, String> map = info.getQueryParameters();
-           
-           String result = "";
-           
-           Set<String> keys = map.keySet();
-           
-           // Enable MongoDB logging in general
-           
-           MongoClient client = null;
-                                   try {
-                                           client = new MongoClient();
-                                   } catch (UnknownHostException e) {
-                                           e.printStackTrace();
-                                   }
-           
-           DB db = client.getDB("stuff");
-           DBCollection items = db.getCollection("items");
-           // finish connection setup
-           
-           BasicDBObject query = new BasicDBObject();
-           List<String> fields = null;
-           
-           //Iterates to build query
-           for (String key : keys)
-           {
-                   fields =  map.get(key);
-                   
-                   
-                   for (String field : fields)
-                   {
-                           
-                           //Does a LIKE %title% for title  (otherwise price = 10 would return if price = 100)
-                           if(key.toString() == "title")
-                           {
-                           Pattern x = Pattern.compile( field);
-                           query.put(key, x);
-                           }
-                           else{
-                                   query.put(key, fields);
-                           }
-                   }
-                   
-           }
-                   
-                           
-           DBCursor cursor = items.find(query);
-                   
-           StringBuilder sb = new StringBuilder();
-           sb.append("{\"items\":[");
-                           
-                           
-                           
-           while (cursor.hasNext()) {
-                   DBObject item = cursor.next();
-                                   
-                   sb.append(item.toString() + ",");}
-                                   
-                   if(cursor.count() == 0)
-                   {
-                                   sb.append("\"No Items Found\"");
-                   }
-                   else
-                   {
-                           sb.deleteCharAt(sb.length() - 1);
-                   }
-                   
-                   sb.append("]}");
-                           
-                   result = sb.toString();
+		return result;
+	}
 
-                   return result;
-   }
-   
+	/**
+	 * Update an existing item, by removing the given id and removing the old
+	 * document, and replacing it with the new one.
+	 * 
+	 * @param input
+	 * @return
+	 */
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String putItem(String input) {
+		Item item = new Gson().fromJson(input, Item.class);
 
-   /**
-    * Update an existing item.
-    * 
-    * @param input
-    * @return
-    */
-   @PUT
-   @Path("update/{itemId}")
-   
-   @Produces(MediaType.APPLICATION_JSON)
-   public String updateItem(@PathParam("itemId") String itemId, @Context UriInfo info){
-           MultivaluedMap<String, String> map = info.getQueryParameters();
-           
-           String result = "";
-           
-           Set<String> keys = map.keySet();
-           
-           // Enable MongoDB logging in general
-           
-           MongoClient client = null;
-                                   try {
-                                           client = new MongoClient();
-                                   } catch (UnknownHostException e) {
-                                           e.printStackTrace();
-                                   }
-           
-           DB db = client.getDB("stuff");
-           DBCollection items = db.getCollection("items");
-           BasicDBObject query = new BasicDBObject("_id",  itemId);
-           
-           
-           BasicDBObject update = new BasicDBObject();
-           
-           for (String key : keys){
-                   
-                   
-                   for(String field :  map.get(key))
-                   {
-                           update.append(key, field);
-                           
-                   }
-                   BasicDBObject updateCommand = new BasicDBObject("$set", update);
-                   items.update(query, updateCommand);
-                                   
-           }
-           
-           DBCursor cursor = items.find(query);
-           
-           
-           StringBuilder sb = new StringBuilder();
-           sb.append("{\"items\":[");
-                           
-           while (cursor.hasNext()) {
-                   DBObject item = cursor.next();
-                                   
-                   sb.append(item.toString() + ",");}
-                                   
-                   if(cursor.count() == 0)
-                   {
-                                   sb.append("\"No Items Found\"");
-                   }
-                   else
-                   {
-                           sb.deleteCharAt(sb.length() - 1);
-                   }
-                   
-                   sb.append("]}");
-                           
-                   result = sb.toString();
+		BasicDBObject query = new BasicDBObject("_id", item.getId());
 
-                   return result;
-   }
-   
+		DBCursor cursor = items.find(query);
+
+		try {
+			while (cursor.hasNext()) {
+				cursor.remove();
+
+				return postItem(input);
+			}
+		} finally {
+			cursor.close();
+		}
+
+		return "error";
+	}
+
+	/**
+	 * Delete the specified item.
+	 * 
+	 * @param itemId
+	 * @return
+	 */
+	@DELETE
+	@Path("{itemId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String deleteItem(@PathParam("itemId") String itemId) {
+		String result = null;
+		WriteResult deleteResult;
+
+		BasicDBObject queryObject = new BasicDBObject("_id", itemId);
+		try {
+			deleteResult = items.remove(queryObject);
+		} catch (MongoException mE) {
+			return "error";
+		}
+
+		result = "Removed. Num Records Deleted: " + deleteResult.getN();
+
+		MongoClientConnection.closeMongoConnection(client);
+
+		return result;
+	}
+
+	/**
+	 * Delete the item with id passed in as a json.
+	 * 
+	 * @param input
+	 * @return
+	 */
+	@DELETE
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public String deleteItemFromJson(String input) {
+		// String result = input;
+		String result = null;
+		WriteResult deleteResult;
+
+		// parse json and setup document
+		Gson gson = new Gson();
+
+		Type type = new TypeToken<Map<String, String>>() {
+		}.getType();
+		Map<String, String> myMap = gson.fromJson(input, type);
+
+		BasicDBObject queryObject = new BasicDBObject(myMap);
+		// end parse
+
+		try {
+			deleteResult = items.remove(queryObject);
+		} catch (MongoException mE) {
+			return "error";
+		}
+
+		result = "Removed JSON. Num Records Deleted: " + deleteResult.getN();
+
+		MongoClientConnection.closeMongoConnection(client);
+
+		return result;
+	}
+
+	/**
+	 * Get a items based on a query.
+	 * 
+	 * @param input
+	 * @return
+	 */
+	@GET
+	@Path("search")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getItemSearch(@Context UriInfo info) {
+		MultivaluedMap<String, String> map = info.getQueryParameters();
+
+		String result = "";
+
+		Set<String> keys = map.keySet();
+
+		// Enable MongoDB logging in general
+
+		MongoClient client = null;
+		try {
+			client = new MongoClient();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+
+		DB db = client.getDB("stuff");
+		DBCollection items = db.getCollection("items");
+		// finish connection setup
+
+		BasicDBObject query = new BasicDBObject();
+		List<String> fields = null;
+
+		// Iterates to build query
+		for (String key : keys) {
+			fields = map.get(key);
+
+			for (String field : fields) {
+
+				// Does a LIKE %title% for title (otherwise price = 10 would
+				// return if price = 100)
+				if (key.toString() == "title") {
+					Pattern x = Pattern.compile(field);
+					query.put(key, x);
+				} else {
+					query.put(key, fields);
+				}
+			}
+
+		}
+
+		DBCursor cursor = items.find(query);
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("{\"items\":[");
+
+		while (cursor.hasNext()) {
+			DBObject item = cursor.next();
+
+			sb.append(item.toString() + ",");
+		}
+
+		if (cursor.count() == 0) {
+			sb.append("\"No Items Found\"");
+		} else {
+			sb.deleteCharAt(sb.length() - 1);
+		}
+
+		sb.append("]}");
+
+		result = sb.toString();
+
+		return result;
+	}
+
+	/**
+	 * Update an existing item.
+	 * 
+	 * @param input
+	 * @return
+	 */
+	@PUT
+	@Path("update/{itemId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String updateItem(@PathParam("itemId") String itemId,
+			@Context UriInfo info) {
+		MultivaluedMap<String, String> map = info.getQueryParameters();
+
+		String result = "";
+
+		Set<String> keys = map.keySet();
+
+		// Enable MongoDB logging in general
+
+		MongoClient client = null;
+		try {
+			client = new MongoClient();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+
+		DB db = client.getDB("stuff");
+		DBCollection items = db.getCollection("items");
+		BasicDBObject query = new BasicDBObject("_id", itemId);
+
+		BasicDBObject update = new BasicDBObject();
+
+		for (String key : keys) {
+
+			for (String field : map.get(key)) {
+				update.append(key, field);
+
+			}
+			BasicDBObject updateCommand = new BasicDBObject("$set", update);
+			items.update(query, updateCommand);
+
+		}
+
+		DBCursor cursor = items.find(query);
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("{\"items\":[");
+
+		while (cursor.hasNext()) {
+			DBObject item = cursor.next();
+
+			sb.append(item.toString() + ",");
+		}
+
+		if (cursor.count() == 0) {
+			sb.append("\"No Items Found\"");
+		} else {
+			sb.deleteCharAt(sb.length() - 1);
+		}
+
+		sb.append("]}");
+
+		result = sb.toString();
+
+		return result;
+	}
+
 }
-
-   
-
