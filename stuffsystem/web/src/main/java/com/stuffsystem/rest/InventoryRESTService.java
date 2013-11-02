@@ -2,6 +2,7 @@ package com.stuffsystem.rest;
 
 import java.lang.reflect.Type;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -100,7 +101,7 @@ public class InventoryRESTService {
 		} finally {
 			cursor.close();
 		}
-		
+
 		MongoClientConnection.closeMongoConnection(client);
 
 		return "error";
@@ -117,7 +118,7 @@ public class InventoryRESTService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getItemFromJson(String input) {
-		
+
 		// parse json and setup document
 		Gson gson = new Gson();
 
@@ -127,12 +128,12 @@ public class InventoryRESTService {
 
 		BasicDBObject document = new BasicDBObject(myMap);
 		// end parse
-		
+
 		DBCursor cursor = items.find(document);
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("{\"items\":[");
-		
+
 		try {
 			while (cursor.hasNext()) {
 				sb.append(cursor.next().toString() + ",");
@@ -140,11 +141,11 @@ public class InventoryRESTService {
 		} finally {
 			cursor.close();
 		}
-		
+
 		sb.deleteCharAt(sb.length() - 1);
 
 		sb.append("]}");
-		
+
 		MongoClientConnection.closeMongoConnection(client);
 
 		return sb.toString();
@@ -170,6 +171,19 @@ public class InventoryRESTService {
 		Map<String, String> myMap = gson.fromJson(input, type);
 
 		BasicDBObject document = new BasicDBObject(myMap);
+		
+		ArrayList<String> fieldsTemp = new ArrayList<String>();
+		
+		Set<String> keys = myMap.keySet();
+		
+		for(String key : keys) {
+			fieldsTemp.add(key);
+		}
+		
+		String[] fields = new String[fieldsTemp.size()];
+		fields = fieldsTemp.toArray(fields);
+		
+		document.put("fields", fields);
 		// end parse
 
 		items.insert(document);
